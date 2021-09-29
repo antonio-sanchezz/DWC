@@ -8,7 +8,7 @@ c. Es noche desde las 20:31 hasta las horas 7:29.
 */
 
 var mensaje;
-var hora = prompt("Indique una hora");
+var hora = prompt("Indique una hora", "HH:ss");
 
 if (hora >= "07:30" && hora <= "14:00") {
     mensaje = "Buenos dias";
