@@ -60,32 +60,29 @@ if (devolver >= 1) {
     devolver = devolver - moneda1;
 }
 if (devolver >= 0.5) {
-    moneda50 = devolver / 0.5;
-    devolver = devolver - moneda50;
+    moneda50 = Math.trunc(devolver / 0.5);
+    devolver = devolver - moneda50*0.5;
 }
 if (devolver >= 0.2) {
-    moneda20 = devolver / 0.2;
-    devolver = devolver - moneda20;
+    moneda20 = Math.trunc(devolver / 0.2);
+    devolver = devolver - moneda20*0.2;
 }
 if (devolver >= 0.1) {
-    moneda10 = devolver / 0.1;
-    devolver = devolver - moneda10;
+    moneda10 = Math.trunc(devolver / 0.1);
+    devolver = devolver - moneda10*0.1;
 }
 if (devolver >= 0.05) {
-    moneda5 = devolver / 0.05;
-    devolver = devolver - moneda5;
+    moneda5 = Math.trunc(devolver / 0.05);
+    devolver = devolver - moneda5*0.05;
 }
 if (devolver >= 0.02) {
-    moneda2cents = devolver / 0.02;
-    devolver = devolver - moneda2cents;
+    moneda2cents = Math.trunc(devolver / 0.02);
+    devolver = devolver - moneda2cents*0.02;
 }
 if (devolver >= 0.01) {
-    moneda1cent = devolver / 0.01;
-    devolver = devolver - moneda1cent;
+    moneda1cent = Math.trunc(devolver / 0.01);
+    devolver = devolver - moneda1cent*0.01;
 }
 
-
-
-document.write(devolver);
 document.write("Billetes 500: " + billete500 + " 200: " + billete200 + " 100: " + billete100 + " 50: " + billete50 + " 20: " + billete20 + " 10: " + billete10 + " 5: " + billete5 + "<br />");
 document.write("Monedas 2: " + moneda2 + " 1: " + moneda1 + " 0.50: " + moneda50 + " 0.20: " + moneda20 + " 0.10: " + moneda10 + " 0.05: " + moneda5 + " 0.02: " + moneda2cents + " 0.01: " + moneda1cent);
