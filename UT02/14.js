@@ -34,11 +34,13 @@ do {
                     document.write("Sueldo: " + sueldo + "<br>");
                 } else
                 {
-                    alert("Sueldo incorrecto");
+                    validadorSueldo = true;
+                    alert("Sueldo incorrecto debe estar entre 1000 y 2000");
                 }
             }while(validadorSueldo);
         } else
         {
+        validadorSueldo = true;
         alert("Sexo incorrecto, pruebe con H(Hombre) o M(Mujer)");
         }
     } while(validadorSexo);
