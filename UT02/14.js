@@ -1,28 +1,34 @@
 var sexo;
 var sueldo;
-var validador = true;
+var validadorSexo = true;
+var validadorSueldo = true;
 
 do {
-sexo = prompt("Indice su sexo (H/M):");
-    if (sexo == "*")
-    {
-        break;
-    }
-    if (sexo == "H" || sexo == "M")
-    {
-        validador = false;
-
-        sueldo = parseInt(prompt("Indique el sueldo:"));
-
-        if(Number.isInteger(sueldo) && sueldo >= 1000 && sueldo <= 2000)
+    do {
+    sexo = prompt("Indice su sexo (H/M):");
+        if (sexo == "*")
         {
-            document.write("Correcto");
+            break;
+        }
+        if (sexo == "H" || sexo == "M")
+        {
+            validadorSexo = false;
+            do {
+                sueldo = parseInt(prompt("Indique el sueldo:"));
+
+                if(Number.isInteger(sueldo) && sueldo >= 1000 && sueldo <= 2000)
+                {
+                    validadorSueldo = false;
+                    document.write("Sexo: " + sexo + "<br>");
+                    document.write("Sueldo: " + sueldo + "<br>");
+                } else
+                {
+                    alert("Sueldo incorrecto");
+                }
+            }while(validadorSueldo);
         } else
         {
-            alert("Sueldo incorrecto");
-        }
-    } else
-    {
         alert("Sexo incorrecto, pruebe con H(Hombre) o M(Mujer)");
-    }
-} while(validador);
+        }
+    } while(validadorSexo);
+} while(sexo != "*");
