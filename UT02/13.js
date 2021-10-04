@@ -10,7 +10,7 @@ year = parseInt(prompt("Indice su año de nacimiento:"));
 
 var sumFecha = dia + mes + year;
 var sum = 0;
-
+/*
 if (dia <= 30 && dia > 0) {
     if (mes <= 12 && mes > 0) {
         if (Number.isInteger(year)) {
@@ -28,7 +28,7 @@ if (dia <= 30 && dia > 0) {
 } else {
     document.write("Formato de día incorrecto.");
 }
-
+*/
 do {
     if(sumFecha == 0) {
         sumFecha = sum;
