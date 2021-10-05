@@ -1,4 +1,4 @@
-var devolver = prompt("Cantidad de dinero:");
+var devolver = parseFloat(prompt("Cantidad de dinero:"));
 var moneda2 = 0;
 var moneda1 = 0;
 var moneda50 = 0;
