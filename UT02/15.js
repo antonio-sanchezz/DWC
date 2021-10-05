@@ -36,10 +36,8 @@ if (devolver >= 0.02) {
     moneda2cents = Math.trunc(devolver / 0.02);
     devolver = devolver - moneda2cents*0.02;
 }
-document.write(devolver);
 if (devolver >= 0.01) {
     moneda1cent = Math.trunc(devolver / 0.01);
     devolver = devolver - moneda1cent*0.01;
 }
-document.write(devolver);
 document.write("Monedas 2: " + moneda2 + " 1: " + moneda1 + " 0.50: " + moneda50 + " 0.20: " + moneda20 + " 0.10: " + moneda10 + " 0.05: " + moneda5 + " 0.02: " + moneda2cents + " 0.01: " + moneda1cent);
