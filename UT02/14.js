@@ -9,7 +9,7 @@ var contadorH = 0;
 
 do {
     do {
-    sexo = prompt("Indice su sexo (H/M):");
+        sexo = prompt("Indice su sexo (H/M):");
         if (sexo == "*")
         {
             break;
@@ -23,10 +23,12 @@ do {
                 if(Number.isInteger(sueldo) && sueldo >= 1000 && sueldo <= 2000)
                 {
                     validadorSueldo = false;
-                    if (sexo == "H") {
+                    if (sexo == "H")
+                    {
                         mediaHombre += sueldo;
                         contadorH++;
-                    } else {
+                    } else
+                    {
                         mediaMujer += sueldo;
                         contadorM++;
                     }
