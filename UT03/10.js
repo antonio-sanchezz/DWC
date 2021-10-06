@@ -1,5 +1,4 @@
-//var telefono = prompt("Introduzca un numero de telefono:");
-telefono = "954235689"
+var telefono = prompt("Introduzca un numero de telefono:");
 var prefijo = telefono.substr(0,3);
 
 if (prefijo == "950")
