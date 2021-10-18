@@ -7,10 +7,7 @@ mail = remplaceAt(mail);
 // Comprobar si el usuario tiene al menos 3 letras.
 function comprobarUsuario(mail)
 {
-    mailTroceado = mail.split("@");
-    numUsuario = mailTroceado[0].length;
-
-    if (numUsuario < 3)
+    if (!mail.match(/^\w{3,}/))
     {
         alert("El nombre no cumple los requisitos, debe tener al menos tres letras.");
     }
@@ -19,19 +16,9 @@ function comprobarUsuario(mail)
 // Comprobar que el correo electrónico contiene el carácter @ (arroba) y el punto ".".
 function comprobarEmail (mail)
 {
-    var expArroba = /@/g;
-    var matchesA = mail.match(expArroba);
-
-    var expPunto = /&period/g;
-    var matchesP = mail.match(expPunto);
-
-    if (matchesA == null)
+    if (!mail.match(/^[\S]+(@)+\w+(\.)+\w{2,3}$/))
     {
-        alert("Falta el símbolo @ en el correo electrónico.");
-    }
-    if (matchesP == null)
-    {
-        alert("Falta el símbolo . en el correo electrónico.");
+        alert("Falta el símbolo @ o el . en el correo electrónico.");
     }
 }
 
