@@ -1,4 +1,6 @@
+var newOpen = window.open();
+
 for (var value in navigator)
 {
-    document.write(value + " = " + navigator[value] + "<br>");
+    newOpen.document.write(value + " = " + navigator[value] + "<br>");
 }
