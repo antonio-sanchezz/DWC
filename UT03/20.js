@@ -1,6 +1,6 @@
-var dia = parseInt(prompt("Indice su dia de nacimiento:"));
-var mes = parseInt(prompt("Indice su mes de nacimiento:"));
-var year = parseInt(prompt("Indice su año de nacimiento:"));
+var dia = parseInt(prompt("Indique su dia de nacimiento:"));
+var mes = parseInt(prompt("Indique su mes de nacimiento:"));
+var year = parseInt(prompt("Indique su año de nacimiento:"));
 
 var hoy = Date.now();
 var nacimiento = new Date(year, mes-1, dia).getTime();
