@@ -6,21 +6,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
-<body onLoad="inicializar()">
+<body>
 	<h1>Abrimos y cerramos ventanas</h1>
 	<form>
-		<p> <input type="button" id="crear-ventana" value="Crear Nueva Ventana">
-		<input type="button" id="cerrar-ventana" value="Cerrar Nueva Ventana"> </p>
+		<p>
+			<a onclick="crearNueva()" href="">Crear Nueva Ventana</a>
+			<a onclick="cerrarNueva()" href="">Cerrar Nueva Ventana</a>
+		</p>
 	</form>
 </body>
 <script type="text/javascript">
-	function inicializar(){
-		document.getElementById("crear-ventana").onclick=crearNueva;
-		document.getElementById("cerrar-ventana").onclick=cerrarNueva;
-	}
 	var nuevaVentana;
 	function crearNueva(){
-		nuevaVentana = window.open("ojo.html","DWC","height=400,width=800,scrollbars=yes,resizable=yes");
+		nuevaVentana = window.open("ojo.html","DWC","height=400,width=800,scrollbars=1,resizable=yes");
 	}
 	function cerrarNueva(){
 		if (nuevaVentana){
