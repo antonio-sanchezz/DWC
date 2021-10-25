@@ -4,7 +4,7 @@ function publicidad()
 {
     document.title = txt;
     txt = txt.substring(1,txt.length) + txt.charAt(0);
-    refresco = setTimeout("publicidad()", 200);
+    setTimeout("publicidad()", 200);
 }
 
 publicidad();
