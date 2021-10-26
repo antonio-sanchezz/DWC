@@ -24,8 +24,6 @@ do {
 // Abrimos el alias en una nueva ventana si existe algun alias.
 if (aliasArray != "")
 {
-    var alto = (screen.height*50)/100;
-    var ancho = (screen.width*50)/100;
     var ventana = window.open("","","location=0,scrollbars=1,height=300,width=400");
     ventana.moveTo(screen.width/2-200,screen.height/2-150); 
     ventana.document.write(aliasArray);
