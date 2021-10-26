@@ -12,16 +12,25 @@ do {
 
     aliasComprobado = comprobarAlias(alias);
 
+    if (!aliasComprobado) {
+        continue;
+    }
+
     // Recogemos todos los alias en una variable.
-    aliasArray = aliasArray + "," + aliasComprobado;
+    aliasArray = aliasArray + "\n" + aliasComprobado;
 
 } while (alias != "fin");
 
 // Abrimos el alias en una nueva ventana si existe algun alias.
 if (aliasArray != "")
 {
-    var ventana = window.open();
+    var alto = (screen.height*50)/100;
+    var ancho = (screen.width*50)/100;
+    var ventana = window.open("","","location=0,scrollbars=1,height=300,width=400");
+    ventana.moveTo(screen.width/2-200,screen.height/2-150); 
     ventana.document.write(aliasArray);
+} else {
+    alert("No se ha introducido ningún alias.");
 }
 
 // Comprobamos el correo electronico.
