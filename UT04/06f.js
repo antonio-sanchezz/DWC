@@ -2,7 +2,7 @@ let sum = (...arguments) =>
 { 
     let suma = 0; 
 
-    for(let i in arguments)
+    for(let i of arguments)
     { 
         suma += arguments[i];
     }
