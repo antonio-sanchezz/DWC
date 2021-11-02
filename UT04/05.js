@@ -10,15 +10,18 @@ function obtenerPrimo(numero) {
         esPrimo = true;
     } else
     {
-        if (numero % 3 == 0 || numero % 2 == 0)
-        {
-            esPrimo = false;
-        } else
-        {
-            esPrimo =true;
-        }
+        do {
+            if (numero % 3 == 0 || numero % 2 == 0 || numero % 5 == 0 || numero % 7 == 0)
+            {
+                esPrimo = false;
+                numero++;
+            } else
+            {
+                esPrimo =true;
+            }
+        } while(!esPrimo);
     }
 
-    return esPrimo;
+    return numero;
 
 }
