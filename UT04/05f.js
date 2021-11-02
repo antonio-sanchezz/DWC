@@ -1,8 +1,6 @@
 var num = parseInt(prompt("Indique un número:"));
 
-document.write(obtenerPrimo(num));
-
-function obtenerPrimo(numero) {
+let obtenerPrimo = (numero) => {
     esPrimo = false;
 
 	if (numero == 0 || numero == 1 || numero == 3 || numero == 2)
@@ -22,3 +20,5 @@ function obtenerPrimo(numero) {
     return esPrimo;
 
 }
+
+document.write(obtenerPrimo(num));
