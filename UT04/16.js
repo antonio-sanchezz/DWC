@@ -1,5 +1,3 @@
-//16,18,19,20,21,22
-
 let numRep = (numeros) => {
     var repetidos = {}
     numeroRep = [];
