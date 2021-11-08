@@ -47,11 +47,15 @@ let menorEdad = () => {
     var filtrado = [];
 
     filtrado = arrayFinal.filter(array => checkEdad(array.fechaNacimiento) < 18);
-
+    
     // Abrimos nueva ventana con los datos obtenidos.
     var ventana = window.open("","","location=0,scrollbars=1,height=300,width=400");
     ventana.moveTo(screen.width/2-200,screen.height/2-150);
     filtrado.forEach(element => {
+
+        var edad = checkEdad(element.fechaNacimiento);
+
+        var yearsMore = 18 - edad;
 
         var hoy = new Date();
 
@@ -63,6 +67,10 @@ let menorEdad = () => {
         if (m > 0 || (m === 0 && hoy.getDate() < fFecha1.getDate()))
         {
             year++;
+            yearsMore--;
+        } else {
+            yearsMore--;
+            yearsMore--;
         }
 
 
@@ -74,7 +82,7 @@ let menorEdad = () => {
         console.log(fFecha2);
         var dias = Math.floor(dif / (1000 * 60 * 60 * 24));
 
-        ventana.document.write(element.nombre + " " + element.apellido1 + " " + element.apellido2 + " DNI: " + element.dni + " Fecha Nacimiento: " + element.fechaNacimiento + " Dias para tu cumpleaños: " + dias + "<br>");
+        ventana.document.write(element.nombre + " " + element.apellido1 + " " + element.apellido2 + " DNI: " + element.dni + " Fecha Nacimiento: " + element.fechaNacimiento + " " +yearsMore + " año/s y " + dias + " dia/s para tu mayoría de edad<br>");
     });
 
     return filtrado;
