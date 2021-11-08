@@ -103,7 +103,50 @@ let checkEdad = (edad) => {
     return edad;
 }
 
+let modificaDatos = (arrayMulti) => {
+    var dni = prompt("DNI del elemento a modificar", "23456789Z");
+    for(let i = 0;i < arrayMulti.length;i++) {
+        if(arrayMulti[i]['dni'] == dni) {
+            var nombre = prompt("Nuevo nombre", "Pepe");
+            var apellido1 = prompt("Nuevo apellido1", "Acosta");
+            var apellido2 = prompt("Nuevo apellido2", "Perez");
+            var fechaNacimiento = prompt("Nueva fecha de nacimiento", "01/01/2001");
+
+            console.log(arrayMulti[i]);
+
+            arrayMulti[i]['nombre'] = nombre; // nombre
+            arrayMulti[i]['apellido1'] = apellido1; // apellido1
+            arrayMulti[i]['apellido2'] = apellido2; // apellido2
+            arrayMulti[i]['fechaNacimiento'] = fechaNacimiento; // fechaNacimiento
+        }
+    }
+    return arrayMulti;
+}
+
+let eliminaUsuario = (arrayMulti, dni) => {
+    for(let i = 0;i < arrayMulti.length;i++) {
+        if(arrayMulti[i]['dni'] == dni) {
+            var opcion = prompt("Desea eliminar el registro con el dni " + dni + "?", "SI");
+            if (opcion == "SI") {
+                arrayMulti.splice(i, 1);
+            }
+        }
+    }
+    return arrayMulti;
+}
+
 // Imprimir todos los mayores de edad.
-mayorEdad(arrayFinal);
+//mayorEdad(arrayFinal);
+
 // Imprimir menores de edad y tiempo para su cumpleaños (dias y/o años).
-menorEdad(arrayFinal);
+//menorEdad(arrayFinal);
+
+// Modificar datos.
+modificaDatos(arrayFinal);
+
+// Eliminar usuario.
+//arrayMulti = eliminaUsuario(arrayFinal, "23456789Z");
+
+// Comprobamos la eliminacion y edicion de usuarios.
+imprimirUsuarios(arrayFinal);
+
