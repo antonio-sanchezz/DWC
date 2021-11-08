@@ -57,20 +57,21 @@ let menorEdad = () => {
 
         var fechaCumple = (element.fechaNacimiento).split('/');
         var year = hoy.getFullYear();
-        var fFecha1 = new Date(year,fechaCumple[1]-1,fechaCumple[0]);
+        var fFecha1 = new Date(year,fechaCumple[1],fechaCumple[0]);
         var m = hoy.getMonth() - fFecha1.getMonth();
 
-        if (m < 0 || (m === 0 && hoy.getDate() < fFecha1.getDate()))
+        if (m > 0 || (m === 0 && hoy.getDate() < fFecha1.getDate()))
         {
-            year--;
+            year++;
         }
 
+
+
+        var fFecha1 = new Date(year,fechaCumple[1]-1,fechaCumple[0]);
+        var fFecha2 = new Date(hoy.getFullYear(),hoy.getMonth(),hoy.getDate());
+        var dif = fFecha1 - fFecha2;
         console.log(fFecha1);
         console.log(fFecha2);
-
-        var fFecha1 = new Date(year,fechaCumple[1],fechaCumple[0]);
-        var fFecha2 = new Date(hoy.getFullYear(),hoy.getMonth(),hoy.getDay());
-        var dif = fFecha2 - fFecha1;
         var dias = Math.floor(dif / (1000 * 60 * 60 * 24));
 
         ventana.document.write(element.nombre + " " + element.apellido1 + " " + element.apellido2 + " DNI: " + element.dni + " Fecha Nacimiento: " + element.fechaNacimiento + " Dias para tu cumpleaños: " + dias + "<br>");
