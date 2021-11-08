@@ -1,5 +1,3 @@
-//19,22+
-
 arrayFinal = [];
 
 while(true) {
@@ -32,35 +30,71 @@ let imprimirUsuarios = (arrayMulti) => {
 
 }
 
-let menorEdad = (arrayMulti) => {
+let mayorEdad = () => {
+    var filtrado = [];
 
-    return arrayFinal.filter(() => {
-        var result = [];
-        var hoy = new Date();
-        for(let i = 0;i < arrayMulti.length;i++) {
-            fecha = arrayMulti[i]['fechaNacimiento'].split("/");
-            var cumpleanos = new Date(fecha[2], fecha[1], fecha[0]);
-            var edad = hoy.getFullYear() - cumpleanos.getFullYear();
-            console.log(edad);
-            var m = hoy.getMonth() - cumpleanos.getMonth();
-        
-            if (m < 0 || (m === 0 && hoy.getDate() < cumpleanos.getDate())) {
-                edad--;
-            }
-            if (edad >= 18) {
-                result.push(arrayMulti[i]);
-            }
-        }
-        return result;
-    }).map((val) => {
-        return val * 2;
-    })
+    filtrado = arrayFinal.filter(array => checkEdad(array.fechaNacimiento) >= 18);
 
     // Abrimos nueva ventana con los datos obtenidos.
     var ventana = window.open("","","location=0,scrollbars=1,height=300,width=400");
-    ventana.moveTo(screen.width/2-200,screen.height/2-150); 
-    ventana.document.write("Primera palabra ingresada: " + primPalabra  + "<br>");
+    ventana.moveTo(screen.width/2-200,screen.height/2-150);
+    filtrado.forEach(element => {
+        ventana.document.write(element.nombre + " " + element.apellido1 + " " + element.apellido2 + " DNI: " + element.dni + " Fecha Nacimiento: " + element.fechaNacimiento + "<br>");
+    });
 }
 
-// Imprimir todos los usuarios.
-console.log(menorEdad(arrayFinal));
+let menorEdad = () => {
+    var filtrado = [];
+
+    filtrado = arrayFinal.filter(array => checkEdad(array.fechaNacimiento) < 18);
+
+    // Abrimos nueva ventana con los datos obtenidos.
+    var ventana = window.open("","","location=0,scrollbars=1,height=300,width=400");
+    ventana.moveTo(screen.width/2-200,screen.height/2-150);
+    filtrado.forEach(element => {
+
+        var hoy = new Date();
+
+        var fechaCumple = (element.fechaNacimiento).split('/');
+        var year = hoy.getFullYear();
+        var fFecha1 = new Date(year,fechaCumple[1]-1,fechaCumple[0]);
+        var m = hoy.getMonth() - fFecha1.getMonth();
+
+        if (m < 0 || (m === 0 && hoy.getDate() < fFecha1.getDate()))
+        {
+            year--;
+        }
+
+        console.log(fFecha1);
+        console.log(fFecha2);
+
+        var fFecha1 = new Date(year,fechaCumple[1],fechaCumple[0]);
+        var fFecha2 = new Date(hoy.getFullYear(),hoy.getMonth(),hoy.getDay());
+        var dif = fFecha2 - fFecha1;
+        var dias = Math.floor(dif / (1000 * 60 * 60 * 24));
+
+        ventana.document.write(element.nombre + " " + element.apellido1 + " " + element.apellido2 + " DNI: " + element.dni + " Fecha Nacimiento: " + element.fechaNacimiento + " Dias para tu cumpleaños: " + dias + "<br>");
+    });
+
+    return filtrado;
+}
+
+let checkEdad = (edad) => {
+    var hoy = new Date();
+
+    fecha = edad.split("/");
+    var cumpleanos = new Date(fecha[2], fecha[1], fecha[0]);
+    var edad = hoy.getFullYear() - cumpleanos.getFullYear();           
+    var m = hoy.getMonth() - cumpleanos.getMonth();
+
+    if (m < 0 || (m === 0 && hoy.getDate() < cumpleanos.getDate()))
+    {
+        edad--;
+    }
+    return edad;
+}
+
+// Imprimir todos los mayores de edad.
+mayorEdad(arrayFinal);
+// Imprimir menores de edad y tiempo para su cumpleaños (dias y/o años).
+menorEdad(arrayFinal);
