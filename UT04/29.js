@@ -44,17 +44,33 @@ class Alumno extends Persona {
     }
 
     getMejorNota() {
+        var mejorNota = 0;
+        var mejorAsignatura = [];
+        var listaNotas = [];
 
+        this.notas.forEach((value, key) => {
+            listaNotas.push(`${value}`);
+        });
+
+        this.notas.forEach((value, key) => {
+            if (`${value}` == Math.max(...listaNotas)) {
+                mejorNota = `${value}`;
+                mejorAsignatura.push(`${key}`);
+            }
+        });
+
+          return "Un " + mejorNota + " es la mejor nota, en la/s asignatura/s " + mejorAsignatura;
     }
 
 }
 
 var notas = new Map();
 
-notas.set("Desarrollo Web en Entorno Cliente",9).set("Desarrollo Web en Entorno Servidor",9).set("Empresa e Iniciativa Emprendedora",8).set("Desarrollo Web de Interfaz",6).set("Desarrollo de Aplicaciones Web",9);
+notas.set("Desarrollo Web en Entorno Cliente",9).set("Desarrollo Web en Entorno Servidor",10).set("Empresa e Iniciativa Emprendedora",8).set("Desarrollo Web de Interfaz",6).set("Desarrollo de Aplicaciones Web",9);
 
 
 var alumno = new Alumno("Antonio", "Sanchez Espinosa", "45362145Z", "25/02/1998", "1º", notas);
 
 alumno.imprimirAlumno();
-document.write("<br>Nota media: " + alumno.getNotaMedia());
+document.write("<br>Nota media: " + alumno.getNotaMedia() + "<br>");
+document.write(alumno.getMejorNota());
