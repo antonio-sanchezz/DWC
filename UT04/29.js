@@ -73,7 +73,7 @@ class Aula {
 
     }
 
-    ordenarNota(alumno) {
+    ordenarNota(dni) {
 
     }
 
