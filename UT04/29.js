@@ -64,6 +64,28 @@ class Alumno extends Persona {
 
 }
 
+class Aula {
+    constructor(alumnos) {
+        this.alumnos = alumnos;
+    }
+
+    buscarDni(dni) {
+
+    }
+
+    ordenarNota(alumno) {
+
+    }
+
+    ordenarAlumnos() {
+
+    }
+
+    imprimirAlumnos() {
+
+    }
+}
+
 var notas = new Map();
 
 notas.set("Desarrollo Web en Entorno Cliente",9).set("Desarrollo Web en Entorno Servidor",10).set("Empresa e Iniciativa Emprendedora",8).set("Desarrollo Web de Interfaz",6).set("Desarrollo de Aplicaciones Web",9);
@@ -74,3 +96,5 @@ var alumno = new Alumno("Antonio", "Sanchez Espinosa", "45362145Z", "25/02/1998"
 alumno.imprimirAlumno();
 document.write("<br>Nota media: " + alumno.getNotaMedia() + "<br>");
 document.write(alumno.getMejorNota());
+
+var aula1 = new Aula(alumno);
