@@ -4,7 +4,8 @@ class SalaConciertos {
     }
 
     imprimirListadoBandas = () => {
-        for(let i = 0;i < this.arrayBandas.length;i++) {
+        for(let i = 0;i < this.arrayBandas.length;i++)
+        {
             this.arrayBandas[i].mostrarBanda();
         }
     }
@@ -14,15 +15,24 @@ class SalaConciertos {
     }
 
     buscarBandasPorEstilo = (estilo) => {
-        return this.arrayBandas.find((banda) => banda.getEstilo() == estilo);
+        return this.arrayBandas.filter((banda) => banda.getEstilo() == estilo);
     }
 
-    ordenarBandasPorAnio = (anio) => {
-        return this.arrayBandas.find((banda) => banda.getAnioFormacion() == anio);
+    ordenarBandasPorAnio = () => {
+        return this.arrayBandas.sort((a,b) => {
+            if (a.anioFormacion > b.anioFormacion)
+            {
+              return 1;
+            } else if (a.anioFormacion < b.anioFormacion)
+            {
+              return -1;
+            } 
+            return 0;
+          });
     }
 
     eliminarBanda = (nombre) => {
-        this.arrayBandas.filter((banda) => {
+        this.arrayBandas = this.arrayBandas.filter((banda) => {
             return banda.nombre !== nombre;
         });
     }

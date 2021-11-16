@@ -25,9 +25,5 @@ class Banda {
     getEstilo = () => {
         return this.estilo;
     }
-
-    getAnioFormacion = () => {
-        return this.anioFormacion;
-    }
     
 }

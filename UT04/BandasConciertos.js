@@ -8,10 +8,10 @@ integrantes2.set("52365214Z", "Helena Suarez Escobar").set("89654123B", "Alberto
 // Generamos bandas.
 var banda1 = new Banda("Municipal", 1998, integrantes1, 954236541, "Clasico");
 var banda2 = new Banda("New World", 2005, integrantes2, 954021365, "Rock");
-var banda2 = new Banda("Fast Rock", 2007, integrantes2, 962153625, "Rock");
+var banda3 = new Banda("Fast For", 2007, integrantes2, 962153625, "Rock");
 
 // Generamos una sala de conciertos.
-var sala1 = new SalaConciertos([banda1, banda2]);
+var sala1 = new SalaConciertos([banda1, banda2, banda3]);
 
 // Mostrar una banda.
 //banda1.mostrarBanda();
@@ -26,8 +26,24 @@ var sala1 = new SalaConciertos([banda1, banda2]);
 //sala1.buscarBandaPorNombre("Municipal").mostrarBanda();
 
 // Buscar banda mediante un estilo.
-sala1.buscarBandasPorEstilo("Rock").mostrarBanda();
+/*var selectStyle = sala1.buscarBandasPorEstilo("Rock");
 
-// Buscar banda mediante un año de formacion.
-//sala1.ordenarBandasPorAnio(1998).mostrarBanda();
+for (banda of selectStyle)
+{
+    banda.mostrarBanda();
+}*/
+
+// Ordenar banda mediante sus años de formacion.
+/*var orderByAnio = sala1.ordenarBandasPorAnio();
+
+for (banda of orderByAnio)
+{
+    banda.mostrarBanda();
+}*/
+
+// Eliminar banda por nombre.
+//sala1.eliminarBanda("Municipal");
+
+// Probamos la eliminacion de la banda.
+//sala1.imprimirListadoBandas();
 
