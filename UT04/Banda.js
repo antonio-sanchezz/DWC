@@ -21,4 +21,13 @@ class Banda {
     getNombre = () => {
         return this.nombre;
     }
+
+    getEstilo = () => {
+        return this.estilo;
+    }
+
+    getAnioFormacion = () => {
+        return this.anioFormacion;
+    }
+    
 }

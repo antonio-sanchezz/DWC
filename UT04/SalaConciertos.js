@@ -13,15 +13,17 @@ class SalaConciertos {
         return this.arrayBandas.find((banda) => banda.getNombre() == nombre);
     }
 
-    buscarBandasPorEstilo = () => {
-
+    buscarBandasPorEstilo = (estilo) => {
+        return this.arrayBandas.find((banda) => banda.getEstilo() == estilo);
     }
 
-    ordenarBandasPorAnio = () => {
-
+    ordenarBandasPorAnio = (anio) => {
+        return this.arrayBandas.find((banda) => banda.getAnioFormacion() == anio);
     }
 
-    eliminarBanda = () => {
-
+    eliminarBanda = (nombre) => {
+        this.arrayBandas.filter((banda) => {
+            return banda.nombre !== nombre;
+        });
     }
 }

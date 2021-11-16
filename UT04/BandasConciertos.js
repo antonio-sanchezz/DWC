@@ -8,6 +8,7 @@ integrantes2.set("52365214Z", "Helena Suarez Escobar").set("89654123B", "Alberto
 // Generamos bandas.
 var banda1 = new Banda("Municipal", 1998, integrantes1, 954236541, "Clasico");
 var banda2 = new Banda("New World", 2005, integrantes2, 954021365, "Rock");
+var banda2 = new Banda("Fast Rock", 2007, integrantes2, 962153625, "Rock");
 
 // Generamos una sala de conciertos.
 var sala1 = new SalaConciertos([banda1, banda2]);
@@ -23,4 +24,10 @@ var sala1 = new SalaConciertos([banda1, banda2]);
 
 // Buscar banda mediante un nombre.
 //sala1.buscarBandaPorNombre("Municipal").mostrarBanda();
+
+// Buscar banda mediante un estilo.
+sala1.buscarBandasPorEstilo("Rock").mostrarBanda();
+
+// Buscar banda mediante un año de formacion.
+//sala1.ordenarBandasPorAnio(1998).mostrarBanda();
 
