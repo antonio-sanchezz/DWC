@@ -76,14 +76,15 @@ class Aula {
     buscarDni(dni) {
         var result = [];
 
+        /*
         for(let i = 0;i < this.alumnos.length;i++) {
             if (this.alumnos[i].getDni() == dni) {
                 result = this.alumnos[i];
                 break;
             }
-        }
+        }*/
     
-        return result;
+        return this.alumnos.filter((alumno) => alumno.getDni() == dni);
     }
 
     ordenarNota(dni) {
