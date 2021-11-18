@@ -7,18 +7,70 @@
     <title>Document</title>
 </head>
 <body>
-    <form>
+    <form name="register" id="register" action="" method="POST">
         <label for="name">Nombre</label><br>
-        <input type="text" id="name" name="name" placeholder="Nombre">
-        <input type="text" id="lastname" name="lastname" placeholder="Apellidos"><br>
-        <label for="username">Nombre de usuario:</label><br>
-        <input type="text" id="username" name="username"><br>
-        <label for="password">Contraseña:</label><br>
-        <input type="password" id="password" name="password"><br>
-        <label for="passwordConfirm">Confirma tu contraseña:</label><br>
-        <input type="password" id="passwordConfirm" name="passwordConfirm"><br>
-        <label>Fecha de nacimiento:</label><br>
-        <input type="month" id="month" name="month"><br>
+        <input type="text" id="name" name="name" placeholder="Nombre" pattern="[A-Za-z]*">
+        <input type="text" id="lastname" name="lastname" placeholder="Apellidos" pattern="[A-Za-z]*"><br>
+        <label for="username">Nombre de usuario</label><br>
+        <input type="text" id="username" name="username" pattern="[A-Za-z]*"><br>
+        <label for="password">Contraseña</label><br>
+        <input type="password" id="password" name="password" pattern="[A-Za-z0-9!­*$%]*"><br>
+        <label for="passwordConfirm">Confirma tu contraseña</label><br>
+        <input type="password" id="passwordConfirm" name="passwordConfirm" pattern="[A-Za-z0-9!­*$%]*"><br>
+        <label>Fecha de nacimiento</label><br>
+        <input type="number" id="day" name="day" placeholder="Día" min="1" max="31">
+        <select id="month" name="month">
+            <option value="1">ENERO</option>
+            <option value="2">FEBRERO</option>
+            <option value="3">MARZO</option>
+            <option value="4">ABRIL</option>
+            <option value="5">MAYO</option>
+            <option value="6">JUNIO</option>
+            <option value="7">JULIO</option>
+            <option value="8">AGOSTO</option>
+            <option value="9">SEPTIEMBRE</option>
+            <option value="10">OCTUBRE</option>
+            <option value="11">NOVIEMBRE</option>
+            <option value="12">DICIEMBRE</option>
+          </select>
+          <input type="number" id="year" name="year" placeholder="Año" min="1900" max="2100"><br>
+          <label>Sexo</label><br>
+          <select id="sex" name="sex">
+            <option value="hombre">Hombre</option>
+            <option value="mujer">Mujer</option>
+            <option value="otro">Otro</option>
+          </select><br>
+          <label>Teléfono móvil</label><br>
+          <input type="tel" id="telefono" name="telefono" pattern="[0-9]{9}"><br>
+          <label>Tu dirección de correo electrónico actual</label><br>
+          <input type="email" id="email" name="email"><br>
+          <button id="register-ok" type="submit">Registrar</button>
       </form>
+      <script>
+
+        const formulario = document.getElementById('register');
+        formulario.addEventListener('submit', copiarDatos);
+
+        function copiarDatos(event) {
+            event.preventDefault();
+            var name = (document.forms["register"].name.value).toUpperCase();
+            var lastname = (document.forms["register"].lastname.value).toUpperCase();
+            var username = (document.forms["register"].username.value).toUpperCase();
+            var day = (document.forms["register"].day.value).toUpperCase();
+            var month = (document.forms["register"].month.value).toUpperCase();
+            var year = (document.forms["register"].year.value).toUpperCase();
+            var sex = (document.forms["register"].sex.value).toUpperCase();
+            var telefono = (document.forms["register"].telefono.value).toUpperCase();
+            var email = (document.forms["register"].email.value).toUpperCase();
+            document.write(name + "<br>");
+            document.write(lastname + "<br>");
+            document.write(username + "<br>");
+            document.write(day + "/" + month + "/" + year + "<br>");
+            document.write(sex + "<br>");
+            document.write(telefono + "<br>");
+            document.write(email + "<br>");
+        }
+
+      </script>
 </body>
 </html>
