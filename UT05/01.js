@@ -41,6 +41,12 @@ window.onload = iniciar;
         document.write(sex + "<br>");
         document.write(telefono + "<br>");
         document.write(email + "<br>");
+
+        if (checkPasswordVal(password, passwordConfirm)) {
+            this.submit();
+        } else {
+            someBug();
+        }
         
         // Abrir datos en nueva venta.
         /*
@@ -54,6 +60,14 @@ window.onload = iniciar;
         ventana.document.write(telefono + "<br>");
         ventana.document.write(email + "<br>");
         */
+    }
+
+    function checkPasswordVal(password, passwordConfirm) {
+        var validator = false;
+        if (password == passwordConfirm) {
+            validator = true;
+        }
+        return validator;
     }
 
     function checkPassword() {
