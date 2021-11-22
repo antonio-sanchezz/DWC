@@ -41,15 +41,6 @@ window.onload = iniciar;
         document.write(sex + "<br>");
         document.write(telefono + "<br>");
         document.write(email + "<br>");
-        var edad = calcularEdad(year + "-" + 
-        month + "-" + day);
-
-        if (password == passwordConfirm) {
-        console.log("OK");
-        
-        } else {
-            document.write("<div>Contraseña incorrecta.</div>");
-        }
         
         // Abrir datos en nueva venta.
         /*
@@ -64,10 +55,30 @@ window.onload = iniciar;
         ventana.document.write(email + "<br>");
         */
 
+        const passwordInp = document.getElementById("#password");;
 
+        passwordInp.addEventListener('input', function (event) {
+            if (checkPassword(password, passwordConfirm)) {
+                console.log("OK");
+            } else {
+                document.write("<div>Las contraseñas no coinciden.</div>");
+            }
+        })
+
+        /*
+        if (checkPassword(password, passwordConfirm)) {
+            console.log("OK");
+        } else {
+            document.write("<div>Las contraseñas no coinciden.</div>");
+        }
+        */
 
     }
 
-    function checkPassword() {
-
+    function checkPassword(password, passwordConfirm) {
+        var validator = false;
+        if (password == passwordConfirm) {
+            validator = true;
+        }
+        return validator;
     }

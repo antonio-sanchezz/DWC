@@ -8,7 +8,7 @@
     <title>Document</title>
 </head>
 <body>
-    <form name="register" id="register" method="POST">
+    <form name="register" id="register" action="javascript:iniciar()" method="POST">
         <label for="name">Nombre</label><br>
         <input type="text" id="name" name="name" placeholder="Nombre" pattern="[A-Za-z]*">
         <input type="text" id="lastname" name="lastname" placeholder="Apellidos" pattern="[A-Za-z]*"><br>
@@ -31,8 +31,8 @@
           <label>Teléfono móvil</label><br>
           <input type="tel" id="telefono" name="telefono" pattern="[0-9]{9}"><br>
           <label>Tu dirección de correo electrónico actual</label><br>
-          <input type="email" id="email" name="email"><br>
-          <button id="register-ok" type="submit">Registrar</button>
+          <input type="email" id="email" name="email"><br><br>
+          <input type="button" onclick="submit()"value="Enviar"/>
       </form>
 </body>
 </html>
