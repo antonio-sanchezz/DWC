@@ -54,31 +54,16 @@ window.onload = iniciar;
         ventana.document.write(telefono + "<br>");
         ventana.document.write(email + "<br>");
         */
-
-        const passwordInp = document.getElementById("#password");;
-
-        passwordInp.addEventListener('input', function (event) {
-            if (checkPassword(password, passwordConfirm)) {
-                console.log("OK");
-            } else {
-                document.write("<div>Las contraseñas no coinciden.</div>");
-            }
-        })
-
-        /*
-        if (checkPassword(password, passwordConfirm)) {
-            console.log("OK");
-        } else {
-            document.write("<div>Las contraseñas no coinciden.</div>");
-        }
-        */
-
     }
 
-    function checkPassword(password, passwordConfirm) {
+    function checkPassword() {
+        var password = document.forms["register"].password.value;
+        var passwordConfirm = document.forms["register"].passwordConfirm.value;
         var validator = false;
         if (password == passwordConfirm) {
-            validator = true;
+            document.getElementById("errorPassword").innerHTML = "<p style='color:green'>Las contraseñas coinciden.</p>";
+        } else {
+            document.getElementById("errorPassword").innerHTML = "<p style='color:red'>Las contraseñas no coinciden.</p>";
         }
-        return validator;
+        //return validator;
     }
