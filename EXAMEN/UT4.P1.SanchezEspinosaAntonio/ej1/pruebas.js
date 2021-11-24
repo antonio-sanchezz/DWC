@@ -41,7 +41,7 @@ buscarCita = (paciente) => {
 function mostrarCitas() {
     for(let i = 0;i < this.citasPreviasArray.length;i++)
     {
-        this.citasPreviasArray[i].paciente.imprimirPaciente() + " " + this.citasPreviasArray[i].paciente.imprimirPersona() + " " + this.citasPreviasArray[i].medico.imprimirMedico() + "<br>";
+        this.citasPreviasArray[i].imprimirCita() + "<br>";
     }
 }
 

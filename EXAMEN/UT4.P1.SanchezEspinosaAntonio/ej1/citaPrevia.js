@@ -4,4 +4,8 @@ class CitaPrevia {
         this.paciente = paciente;
         this.medico = medico;
     }
+
+    imprimirCita() {
+        this.paciente.imprimirPaciente() + " " + this.paciente.imprimirPersona() + " " + this.medico.imprimirMedico() + " " + this.medico.imprimirPersona();
+    }
 }
