@@ -4,7 +4,7 @@ class Medico extends Persona {
         this.nFacultativo = nFacultativo;
     }
 
-    getnFacultativo() {
-        return this.nFacultativo;
+    imprimirMedico() {
+        document.write("MÉDICO: --NºFacultativo:" + this.nFacultativo);
     }
 }

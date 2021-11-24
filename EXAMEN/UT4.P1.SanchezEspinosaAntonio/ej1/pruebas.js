@@ -16,18 +16,19 @@ var cita3 = new CitaPrevia(fecha3, paciente3, medico3);
 
 var citasPreviasArray = [cita1, cita2];
 
-
 // Introducir una nueva cita.
 introduceCita = (citaNueva) => {
     if (!buscarCita(citaNueva.paciente)) {
         this.citasPreviasArray.push(citaNueva);
+    } else {
+        document.write("El paciente ya tiene una cita asignada.<br>");
     }
 }
 
 // Eliminar un cita.
 eliminarCita = (citaDel) => {
     this.citasPreviasArray = this.citasPreviasArray.filter((cita) => {
-        return citaDel !== cita;
+        return citaDel.paciente.dni !== cita.paciente.dni;
     });
 }
 
@@ -36,15 +37,15 @@ buscarCita = (paciente) => {
     return this.citasPreviasArray.find((cita) => cita.paciente.dni == paciente.dni);
 }
 
-// Mostrar citas.
+// Mostrar todas las citas.
 function mostrarCitas() {
     for(let i = 0;i < this.citasPreviasArray.length;i++)
     {
-        document.write(this.citasPreviasArray[i].mostrarCita() + "<br>");
+        this.citasPreviasArray[i].paciente.imprimirPaciente() + " " + this.citasPreviasArray[i].paciente.imprimirPersona() + " " + this.citasPreviasArray[i].medico.imprimirMedico() + "<br>";
     }
 }
 
-// Ordenar por fecha y hora.
+// Ordenar cita por fecha y hora.
 ordenarCitaPorFecha = () => {
     return this.citasPreviasArray.sort((a,b) => {
         if (a.fechaHora > b.fechaHora)
@@ -60,7 +61,7 @@ ordenarCitaPorFecha = () => {
 
 // Listar mutualistas.
 listadoMutualistas = () => {
-    return this.citasPreviasArray.filter((cita) => cita.paciente.mutualista == true);
+    return this.citasPreviasArray.filter((cita) => cita.paciente.mutualista);
 }
 
 introduceCita(cita2);

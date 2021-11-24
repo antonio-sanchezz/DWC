@@ -5,11 +5,7 @@ class Paciente extends Persona {
         this.mutualista = mutualista;
     }
 
-    getnAfiliacion() {
-        return this.nAfiliacion;
-    }
-
-    getMutualista() {
-        return this.mutualista;
+    imprimirPaciente() {
+        document.write("PACIENTE: --NºAfiliación: " + this.nAfiliacion + " --Mutualista: " + this.mutualista + " ");
     }
 }

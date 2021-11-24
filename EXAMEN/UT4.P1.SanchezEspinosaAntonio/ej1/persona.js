@@ -5,15 +5,7 @@ class Persona {
         this.dni = dni;
     }
 
-    getNombre() {
-        return this.nombre;
-    }
-
-    getApellido() {
-        return this.apellido;
-    }
-
-    getDni() {
-        return this.dni;
+    imprimirPersona() {
+        document.write("-- Nombre: " + this.nombre + " -- Apellido: " + this.apellido + " --DNI: " + this.dni + " ");
     }
 }
