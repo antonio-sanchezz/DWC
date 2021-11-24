@@ -41,7 +41,8 @@ buscarCita = (paciente) => {
 function mostrarCitas() {
     for(let i = 0;i < this.citasPreviasArray.length;i++)
     {
-        this.citasPreviasArray[i].imprimirCita() + "<br>";
+        this.citasPreviasArray[i].imprimirCita();
+        document.write("<br>");
     }
 }
 
