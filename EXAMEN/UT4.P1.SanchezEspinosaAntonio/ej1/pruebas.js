@@ -58,6 +58,14 @@ ordenarCitaPorFecha = () => {
         } 
         return 0;
       });
+      /*
+
+      this.citasPreviasArray.sort(function (a,b)
+      {
+          return b.fechaHora - a.fechaHora;
+      });
+
+      */
 }
 
 // Listar mutualistas.
