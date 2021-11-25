@@ -6,6 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script type="text/javascript" src="04.js"></script>
     <title>Document</title>
+    <style>
+        p {
+            font-weight: bold;
+        }
+        form {
+            background-color: azure;
+            padding: 5%;
+        }
+    </style>
 </head>
 <body>
     <form name="test" id="test" method="POST">
@@ -13,7 +22,7 @@
 
         <div>
           <input type="radio" id="tierra-4500" name="tierra" value="4500">
-          <label for="tierra-4500">4.500 millones de años</label>
+          <label id="tierra" for="tierra-4500">4.500 millones de años</label>
         </div>
         
         <div>
@@ -46,7 +55,7 @@
         
         <div>
           <input type="radio" id="color-verde" name="color" value="verde">
-          <label for="color-verde">Verde</label>
+          <label id="verde" for="color-verde">Verde</label>
         </div>
 
         <div>
@@ -55,7 +64,6 @@
         </div>
         <div id="error-color"></div>
         <br>
-        <button id="evaluar" type="submit">Enviar</button>
     </form>
 </body>
 </html>
