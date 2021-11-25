@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="text/javascript" src="04.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <form name="test" id="test" method="POST">
+        <p>1. ¿Cuantos años tiene la Tierra?</p>
+
+        <div>
+          <input type="radio" id="tierra-4500" name="tierra" value="4500">
+          <label for="tierra-4500">4.500 millones de años</label>
+        </div>
+        
+        <div>
+          <input type="radio" id="tierra-5500" name="tierra" value="5500">
+          <label for="tierra-5500">5.500 millones de años</label>
+        </div>
+        
+        <div>
+          <input type="radio" id="tierra-4000" name="tierra" value="4000">
+          <label for="tierra-4000">4.000 millones de años</label>
+        </div>
+
+        <div>
+            <input type="radio" id="tierra-4300" name="tierra" value="4300">
+            <label for="tierra-4300">4.300 millones de años</label>
+        </div>
+        <div id="error-tierra"></div>
+
+        <p>2. ¿Cuál no es un color primario?</p>
+
+        <div>
+          <input type="radio" id="color-amarillo" name="color" value="amarillo">
+          <label for="color-amarillo">Amarillo</label>
+        </div>
+        
+        <div>
+          <input type="radio" id="color-rojo" name="color" value="rojo">
+          <label for="color-rojo">Rojo</label>
+        </div>
+        
+        <div>
+          <input type="radio" id="color-verde" name="color" value="verde">
+          <label for="color-verde">Verde</label>
+        </div>
+
+        <div>
+            <input type="radio" id="color-azul" name="color" value="azul">
+            <label for="color-azul">Azul</label>
+        </div>
+        <div id="error-color"></div>
+        <br>
+        <button id="evaluar" type="submit">Enviar</button>
+    </form>
+</body>
+</html>
