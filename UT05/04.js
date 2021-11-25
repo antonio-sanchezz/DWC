@@ -23,6 +23,9 @@ function iniciar() {
                 document.getElementById("tierra-4000").style.display = "none";
                 document.getElementById("tierra").style.color = "green";
                 document.getElementById("tierra").style.fontWeight = "900";
+                var correctas = document.getElementById("correctas");
+                var correctasValue = parseInt(correctas.innerHTML);
+                correctas.innerHTML = correctasValue + 1;
             }
         });
     }
@@ -48,6 +51,9 @@ function iniciar() {
                 document.getElementById("verde").style.color = "green";
                 document.getElementById("verde").style.fontWeight = "900";
                 document.getElementById("error-color").innerHTML = "<p style='color:green'>Respuesta correcta</p>";
+                var correctas = document.getElementById("correctas");
+                var correctasValue = parseInt(correctas.innerHTML);
+                correctas.innerHTML = correctasValue + 1;
             }
         });
     }

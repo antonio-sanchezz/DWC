@@ -10,13 +10,14 @@
         p {
             font-weight: bold;
         }
-        form {
+        .container {
             background-color: azure;
             padding: 5%;
         }
     </style>
 </head>
 <body>
+  <div class="container">
     <form name="test" id="test" method="POST">
         <p>1. ¿Cuantos años tiene la Tierra?</p>
 
@@ -65,5 +66,7 @@
         <div id="error-color"></div>
         <br>
     </form>
+    <div><p>Respuestas correctas:</p><p id="correctas">0</p></div>
+  </div>
 </body>
 </html>
