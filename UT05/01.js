@@ -52,6 +52,8 @@ function copiarDatos(event) {
     ventana.document.write(telefono + "<br>");
     ventana.document.write(email + "<br>");
     */
+
+    checkPassword();
 }
 
 function checkPasswordVal(password, passwordConfirm) {
@@ -66,6 +68,7 @@ function checkPassword() {
     var password = document.forms["register"].password.value;
     var passwordConfirm = document.forms["register"].passwordConfirm.value;
     var validator = false;
+    document.getElementById("register").action = "mailto:" + document.forms["register"].email.value; 
     if (password == passwordConfirm) {
         document.getElementById("errorPassword").innerHTML = "<p style='color:green'>Las contraseñas coinciden.</p>";
         validator = true;
