@@ -6,8 +6,9 @@ function iniciar() {
     var rad2 = document.test.tierra;
 
     for (var i = 0; i < rad2.length; i++) {
-        rad2[i].addEventListener('change', function() {
-            if (this.value != "4500") {
+        rad2[i].addEventListener('change', function(event) {
+
+            if (event.currentTarget.value != "4500") {
                 document.getElementById("tierra-4300").style.display = "none";
                 document.getElementById("tierra-5500").style.display = "none";
                 document.getElementById("tierra-4500").style.display = "none";
@@ -34,8 +35,8 @@ function iniciar() {
     var rad1 = document.test.color;
 
     for (var i = 0; i < rad1.length; i++) {
-        rad1[i].addEventListener('change', function() {
-            if (this.value != "verde") {
+        rad1[i].addEventListener('change', function(event) {
+            if (event.currentTarget.value != "verde") {
                 document.getElementById("color-amarillo").style.display = "none";
                 document.getElementById("color-rojo").style.display = "none";
                 document.getElementById("color-azul").style.display = "none";
