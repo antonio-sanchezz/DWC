@@ -6,7 +6,7 @@ function iniciar() {
     var direccion = document.formulario.nombre;
 
     nombre.addEventListener('blur', function(event) {
-        if ( event.target.value = " ") {
+        if (event.target.value = " ") {
             alert("El campo nombre debe estar relleno");
         }
     }, true);
