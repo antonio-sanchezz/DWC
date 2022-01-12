@@ -7,8 +7,8 @@ function iniciar() {
     // Cambiar diseño.
     lista[0].style.cssText = 'list-style-type: square;';
 
-    var ultimo = lista[0].children[0];
-    var primero = lista[0].children[lista[0].children.length-1];
+    var primero = lista[0].children[0];
+    var ultimo = lista[0].children[lista[0].children.length-1];
 
     // Ultimo lugar.
     var elem1 = document.createElement('li');
