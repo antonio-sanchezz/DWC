@@ -18,6 +18,7 @@ function iniciar() {
 function showHide() {
     
     var tabla = document.getElementsByTagName('table')[0];
+
     if (tabla != undefined) {
         tabla.remove();
     } else {
