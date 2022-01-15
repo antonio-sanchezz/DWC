@@ -30,7 +30,7 @@ function iniciar() {
         var parrafo = document.createElement('p');
         let pTexto = document.createTextNode(datos[i].desc);
         lis.appendChild(parrafo);
-        lis.appendChild(pTexto);
+        parrafo.appendChild(pTexto);
 
         var ul2 = document.createElement('ul');
         ul2.setAttribute("class", "specs");
@@ -48,10 +48,27 @@ function iniciar() {
 
     }
 
-    var elemento = document.getElementsByTagName('li');
+    var elemento = document.getElementsByTagName('img');
 
-    elemento.addEventListener('change', function(event) {
-        event.currentTarget.style = "";
-    });
+    for (let i = 0; i < elemento.length; i++) {
+        elemento[i].addEventListener('click', showHide);
+    }
+
+    function showHide() {
+
+        if (this.nextSibling.style.visibility == "hidden") {
+            visible = "visible";
+        } else {
+            visible = "hidden";
+        }
+
+        var padre = this.parentNode;
+        var hijos = padre.childNodes;
+
+        for (let i = 1; i < hijos.length; i++) {
+            hijos[i].style.visibility = visible;
+        }
+            
+    }
 
 }
