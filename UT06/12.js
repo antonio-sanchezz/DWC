@@ -3,6 +3,10 @@ window.addEventListener('load', iniciar);
 function iniciar() {
 
     var container = document.getElementById('container');
+    var img = document.createElement('img');
+    img.setAttribute("src", "http://pngimg.com/uploads/pacman/pacman_PNG89.png");
+    container.appendChild(img);
+    
 
     container.addEventListener('mousemove', function(event) {
 
@@ -10,6 +14,11 @@ function iniciar() {
         y = event.clientY;
 
         console.log(x + "," + y);
+
+
+        img.style.left = x + "px";
+        img.style.top = y + "px";
+
     });
 
 }
