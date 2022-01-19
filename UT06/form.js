@@ -42,10 +42,27 @@ function iniciar() {
                 var error = document.createElement('p');
                 var textError = document.createTextNode('No puede ser menor de edad.');
                 error.setAttribute("id", "error");
+                error.style.color = "red";
                 error.appendChild(textError);
-                form.appendChild(error);
+                edadField.parentNode.insertBefore(error, edadField.nextSibling);
             }
         }
     });
 
+    var enviar = document.getElementById('btnSubmit');
+
+    enviar.addEventListener('click', enviarF);
+
+}
+
+function enviarF() {
+
+    var form = document.getElementById('edadForm');
+    var edad = document.getElementById('edad').value;
+
+    if (edad <= 0) {
+        alert("La edad no puede ser menor o igual a 0.");
+    } else {
+        form.submit();
+    }
 }
