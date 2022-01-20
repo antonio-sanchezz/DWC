@@ -1,9 +1,6 @@
 $(function(){
 
-    //$("p").siblings(':first').css("color", "red");
-    console.log("1");
-    if ($("p").val() == "Primero") {
-        console.log("2");
-    }
+    $("p").eq(0).next().children().css("color", "red");
+    $("p").eq(0).next().find("li").eq(2).css("color", "green");
 
 });
