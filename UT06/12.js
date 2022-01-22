@@ -13,9 +13,6 @@ function iniciar() {
         x = event.clientX;
         y = event.clientY;
 
-        console.log(x + "," + y);
-
-
         img.style.left = x + "px";
         img.style.top = y + "px";
 
