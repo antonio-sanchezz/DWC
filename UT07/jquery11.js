@@ -1,6 +1,7 @@
 $(function(){
 
-    $("button").click(function() {          
+    $("button").click(function() {    
+        //$(this).next.toogle();      
         if ($(this).text() == "Ocultar") {
             $(this).text("Mostrar");
             $(this).next().hide();
