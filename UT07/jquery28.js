@@ -4,7 +4,7 @@ $(function(){
         $("input").addClass("rojo");
     });
 
-    $("select").click(function() {          
+    $("select").change(function() {          
         $("select").addClass("rojo");
     });
 
