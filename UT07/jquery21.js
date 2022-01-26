@@ -8,8 +8,7 @@ $(function(){
 
         $("p").append($("<p>", {
             'text' : 'Texto añadido 2'
-        })
-        );
+        }));
     });
 
 });
