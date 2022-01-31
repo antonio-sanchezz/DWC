@@ -5,7 +5,7 @@ $(function(){
             success: function(result){
                 var obj = JSON.parse(result);
                 var total = obj.val1 + obj.val2;
-                $("#result").append(total);
+                $("#result").html(total);
             }
         });
     });
