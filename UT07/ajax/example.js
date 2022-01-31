@@ -4,8 +4,9 @@ $(function(){
             url: "example.php",
             success: function(result){
                 var obj = JSON.parse(result);
+                var total = obj.val1 + obj.val2;
                 $("#result").append($("<div>", {
-                    'text' : obj.name
+                    'text' : total
                 }));
             }
         });
