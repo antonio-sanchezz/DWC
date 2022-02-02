@@ -18,6 +18,8 @@ $(function(){
                 // Añadimos elementos a la lista principal
                 var lista1 = $("<li>");
                 $("ul:first").append(lista1);
+                // Añadir clase viaje a todos los li hijos del primer ul.
+                $("ul:first").children("li").addClass("viaje");
 
                 // Imagen.
                 var imagen = $("<img>", {
@@ -45,5 +47,10 @@ $(function(){
                 }
             }
         }
+    });
+
+    // Al pasar por encima de las imágenes aparezca deslizándose la descripción.
+    $("img").hover(function() {
+            
     });
 });
