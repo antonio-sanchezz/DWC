@@ -50,7 +50,15 @@ $(function(){
             // Al pasar por encima de las imágenes aparezca deslizándose la descripción.
             $("img").hover(function() {
                 // Pasados 5s se oculta la descripción.
-                $(this).parent().find("p").fadeIn({ duration: 1000, queue: false }).slideUp(5000);
+                $(this).parent().find("p").fadeIn({ duration: 1000, queue: false }).delay(5000).slideUp(5000);
+            });
+
+            $("p").click(function() {
+                $(this).parent().find("ul").toggleClass("iluminar");
+            });
+
+            $(".specs").find("li").dblclick(function() {
+                $(this).toggleClass("destacada");
             });
         }
     });
