@@ -1,6 +1,6 @@
 $(function(){
     $.ajax({
-        url: "12.php",
+        url: "13.php",
         success: function(result){
             var datos = JSON.parse(result);
 
@@ -32,12 +32,13 @@ $(function(){
                     text: datos[i]['desc']
                 });
                 lista1.append(parrafo);
+                parrafo.hide();
 
                 // Specs.
                 var lista2 = $("<ul>", {
                     class: "specs"
                 });
-                lista1.append(lista2);  
+                lista1.append(lista2);
 
                 // Specs List.
                 for (let j = 0; j < datos[i]['specs'].length;j++) {
@@ -46,11 +47,11 @@ $(function(){
                     }));
                 }
             }
+            // Al pasar por encima de las imágenes aparezca deslizándose la descripción.
+            $("img").hover(function() {
+                // Pasados 5s se oculta la descripción.
+                $(this).parent().find("p").fadeIn({ duration: 1000, queue: false }).slideUp(5000);
+            });
         }
-    });
-
-    // Al pasar por encima de las imágenes aparezca deslizándose la descripción.
-    $("img").hover(function() {
-            
     });
 });
