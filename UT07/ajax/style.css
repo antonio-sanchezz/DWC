@@ -1,0 +1,25 @@
+img {
+
+	cursor: pointer;
+
+}
+
+div ul li {
+	float: left;
+	margin-left: 5%;
+}
+
+div ul li img {
+	border: 1px solid black;
+	margin-bottom: 2%;
+}
+
+.titulo{
+	color:blue;
+	font-size: 20px;
+	font-weight: bold;
+}
+.left-block{
+	width: 300px;
+	text-align: justify;
+}
