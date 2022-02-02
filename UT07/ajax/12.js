@@ -5,32 +5,43 @@ $(function(){
             var datos = JSON.parse(result);
 
             $("body").append("<div>");
+            // Añadimos un id al div.
             $("div").attr('id', "todos-los-viajes");
-            $("#todos-los-viajes").append("<ul>");
+            // Añadimos el título.
+            $("#todos-los-viajes").append($("<h1>"));
+            $("h1").append("Subtitulo");
+            // Añadimos la lista principal.
+            $("#todos-los-viajes").append($("<ul>"));
 
             for (let i = 0; i < datos.length;i++) {
 
-                $("<li>").appendTo("ul");
+                // Añadimos elementos a la lista principal
+                var lista1 = $("<li>");
+                $("ul:first").append(lista1);;
 
                 // Imagen.
                 var imagen = $("<img>", {
                     src: datos[i]['src']
                 });
-                imagen.appendTo($("li"));
+                lista1.append(imagen);
 
                 // Párrafo.
                 var parrafo = $("<p>", {
                     text: datos[i]['desc']
                 });
-                parrafo.appendTo($("li"));
+                lista1.append(parrafo);
 
                 // Specs.
                 var lista2 = $("<ul>", {
                     class: "specs"
                 });
-                lista2.appendTo("li");    
+                lista1.append(lista2);  
+
+                // Specs List.
                 for (let j = 0; j < datos[i]['specs'].length;j++) {
-                   $("<li>").appendTo(lista2);
+                    lista2.append($("<li>", {
+                        text: datos[i]['specs'][j]
+                    }));
                 }
             }
         }
