@@ -59,18 +59,9 @@ $(function(){
             }
 
             // Al pasar el raton por encima se le añade la clase destacado y cuando se quita se elimina.
-            $("img").hover(function() {
-                $(this).parent().parent().parent().find(".precio").toggleClass("destacado");
+            $(".fotos").hover(function() {
+                $(this).parent().find(".precio").toggleClass("destacado");
         
-            });
-            $("span").eq(3).hover(function() {
-                $(this).parent().parent().parent().find(".precio").toggleClass("destacado");
-        
-            });
-        
-            // Al hacer click en la imagen se oculta el pie al hacer click de nuevo se muestra.
-            $("img").click(function() {
-                $(this).parent().find("span").toggle();
             });
             
             var tOut = null;
