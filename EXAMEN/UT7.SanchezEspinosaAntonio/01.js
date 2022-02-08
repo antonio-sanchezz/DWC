@@ -63,6 +63,11 @@ $(function(){
                 $(this).parent().find(".precio").toggleClass("destacado");
         
             });
+        
+            // Al hacer click en la imagen se oculta el pie al hacer click de nuevo se muestra.
+            $("img").click(function() {
+                $(this).parent().find("span").toggle();
+            });
             
             var tOut = null;
 
